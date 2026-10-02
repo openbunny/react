@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "name": "title only",
+      "html": "<div><h1 class=\"font-display text-[1.4rem] leading-none\">About</h1></div>"
+    },
+    {
+      "name": "dated",
+      "html": "<div><h1 class=\"font-display text-[1.4rem] leading-none\">About</h1><time dateTime=\"2026-10-01T12:00:00+03:00\" class=\"mt-3 block font-mono text-[0.75rem] text-muted\">site last changed 1 october 2026</time></div>"
+    }
+  ]
+}

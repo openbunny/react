@@ -1,0 +1,9 @@
+version = 1
+SPDX-PackageName = "openbunny-react"
+SPDX-PackageSupplier = "OpenBunny"
+
+[[annotations]]
+path = "**"
+precedence = "closest"
+SPDX-FileCopyrightText = "2026 OpenBunny"
+SPDX-License-Identifier = "MIT"

@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {
+      "name": "plain",
+      "html": "<h2 class=\"flex items-baseline gap-3 font-sc text-[1.05rem]\"><span aria-hidden=\"true\" class=\"font-mono text-[0.7rem] text-muted\">4</span>Verify</h2>"
+    }
+  ]
+}

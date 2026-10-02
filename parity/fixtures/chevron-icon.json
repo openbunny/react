@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "name": "left",
+      "html": "<svg viewBox=\"0 0 16 16\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M10 3 5 8l5 5\"></path></svg>"
+    },
+    {
+      "name": "right",
+      "html": "<svg viewBox=\"0 0 16 16\" width=\"14\" height=\"14\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.5\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M6 3l5 5-5 5\"></path></svg>"
+    }
+  ]
+}

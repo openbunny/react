@@ -1,0 +1,22 @@
+.tok-cmd {
+  color: var(--ink-deep);
+  font-weight: var(--font-weight-bold);
+}
+
+.tok-flag {
+  color: var(--ink-mid);
+}
+
+.tok-str {
+  color: var(--sprout);
+}
+
+.plate {
+  image-rendering: pixelated;
+}
+
+@media (scripting: none) {
+  .js-only {
+    display: none;
+  }
+}

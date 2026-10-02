@@ -1,0 +1,16 @@
+{
+  "cases": [
+    {
+      "name": "flag",
+      "html": "<span class=\"tok-cmd\">run</span><span> </span><span class=\"tok-flag\">--flag</span><span> </span><span>file</span>"
+    },
+    {
+      "name": "quoted",
+      "html": "<span class=\"tok-cmd\">two</span><span> </span><span class=\"tok-str\">&#x27;b c&#x27;</span><span> </span><span class=\"tok-flag\">--flag=1</span>"
+    },
+    {
+      "name": "empty",
+      "html": ""
+    }
+  ]
+}

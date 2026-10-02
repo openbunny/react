@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {
+      "name": "plain",
+      "html": "<div class=\"flex items-center gap-3 border border-line bg-paper-inset px-4 py-2\"><code class=\"flex min-w-0 flex-1 items-baseline gap-2 font-mono text-[0.68rem] leading-[1.65] [overflow-wrap:anywhere] whitespace-break-spaces\"><span aria-hidden=\"true\" class=\"text-muted select-none\">$</span><span class=\"min-w-0\"><span class=\"tok-cmd\">echo</span><span> </span><span class=\"tok-str\">&#x27;a b&#x27;</span></span></code><span class=\"js-only inline-flex flex-col items-end gap-1\"><button type=\"button\" tabindex=\"0\" data-slot=\"button\" aria-label=\"copy command: echo &#x27;a b&#x27;\" class=\"inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-foreground aria-invalid:ring-3 aria-invalid:ring-foreground/20 aria-expanded:bg-foreground/5 aria-expanded:text-foreground h-6 gap-1 px-2.5 border-foreground/45 bg-paper font-sc text-[0.65rem] hover:border-ink hover:bg-paper hover:text-ink\"><span aria-hidden=\"true\">copy</span></button><span role=\"status\" class=\"sr-only\"></span></span></div>"
+    }
+  ]
+}

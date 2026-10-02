@@ -1,0 +1,81 @@
+{
+  "name": "@openbunny/react",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "license": "MIT",
+  "description": "Generic React components for OpenBunny sites.",
+  "packageManager": "bun@1.4.2",
+  "engines": {
+    "bun": "1.4.2"
+  },
+  "browserslist": [
+    "chrome 111",
+    "edge 111",
+    "firefox 111",
+    "safari 16.4"
+  ],
+  "sideEffects": [
+    "./dist/styles.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./package.json": "./package.json",
+    "./styles.css": "./dist/styles.css"
+  },
+  "scripts": {
+    "build": "rm -rf dist && tsc -p tsconfig.build.json && cp src/styles.css dist/styles.css",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "lint": "eslint --max-warnings 0 .",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run --project unit --coverage",
+    "test:parity": "vitest run --project parity"
+  },
+  "peerDependencies": {
+    "@base-ui/react": "^1.7.0",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
+  },
+  "dependencies": {
+    "class-variance-authority": "0.7.1",
+    "clsx": "2.1.1",
+    "tailwind-merge": "3.7.0"
+  },
+  "devDependencies": {
+    "@base-ui/react": "1.7.0",
+    "@testing-library/jest-dom": "7.0.1",
+    "@testing-library/react": "16.3.3",
+    "@types/node": "26.4.0",
+    "@types/react": "19.3.0",
+    "@types/react-dom": "19.3.0",
+    "@vitest/coverage-v8": "5.0.2",
+    "@vitest/eslint-plugin": "1.6.27",
+    "eslint": "9.39.5",
+    "eslint-config-next": "16.3.6",
+    "eslint-plugin-check-file": "3.3.2",
+    "eslint-plugin-compat": "7.0.2",
+    "eslint-plugin-promise": "7.3.0",
+    "eslint-plugin-regexp": "3.3.1",
+    "eslint-plugin-security": "4.1.0",
+    "eslint-plugin-unicorn": "65.0.0",
+    "eslint-plugin-unused-imports": "4.4.1",
+    "globals": "17.12.0",
+    "jsdom": "30.1.1",
+    "next": "16.3.6",
+    "prettier": "3.9.9",
+    "prettier-plugin-tailwindcss": "0.8.1",
+    "react": "19.3.0",
+    "react-dom": "19.3.0",
+    "tailwindcss": "4.3.3",
+    "typescript": "6.0.3",
+    "typescript-eslint": "8.70.1",
+    "vitest": "5.0.2"
+  }
+}

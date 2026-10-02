@@ -1,0 +1,24 @@
+{
+  "cases": [
+    {
+      "name": "bare",
+      "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" class=\"inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-foreground aria-invalid:ring-3 aria-invalid:ring-foreground/20 border-border bg-background hover:bg-foreground/5 hover:text-foreground aria-expanded:bg-foreground/5 aria-expanded:text-foreground h-6 gap-1 px-2.5 text-xs\"></button>"
+    },
+    {
+      "name": "labelled",
+      "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" class=\"inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-foreground aria-invalid:ring-3 aria-invalid:ring-foreground/20 border-border bg-background hover:bg-foreground/5 hover:text-foreground aria-expanded:bg-foreground/5 aria-expanded:text-foreground h-6 gap-1 px-2.5 text-xs\">Go</button>"
+    },
+    {
+      "name": "class and type",
+      "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" class=\"inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-foreground aria-invalid:ring-3 aria-invalid:ring-foreground/20 border-border bg-background hover:bg-foreground/5 hover:text-foreground aria-expanded:bg-foreground/5 aria-expanded:text-foreground h-6 gap-1 px-2.5 text-xs extra\">Go</button>"
+    },
+    {
+      "name": "disabled",
+      "html": "<button type=\"button\" data-disabled=\"\" tabindex=\"0\" disabled=\"\" data-slot=\"button\" aria-label=\"Go now\" class=\"inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-foreground aria-invalid:ring-3 aria-invalid:ring-foreground/20 border-border bg-background hover:bg-foreground/5 hover:text-foreground aria-expanded:bg-foreground/5 aria-expanded:text-foreground h-6 gap-1 px-2.5 text-xs\">Go</button>"
+    },
+    {
+      "name": "outline xs",
+      "html": "<button type=\"button\" tabindex=\"0\" data-slot=\"button\" class=\"inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-foreground aria-invalid:ring-3 aria-invalid:ring-foreground/20 border-border bg-background hover:bg-foreground/5 hover:text-foreground aria-expanded:bg-foreground/5 aria-expanded:text-foreground h-6 gap-1 px-2.5 text-xs\">Go</button>"
+    }
+  ]
+}

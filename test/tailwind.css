@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme inline {
+  --font-display: monospace;
+  --font-sc: monospace;
+  --font-mono: monospace;
+  --font-sans: var(--font-display);
+  --color-ring: currentcolor;
+  --color-border: currentcolor;
+  --color-foreground: currentcolor;
+  --color-background: currentcolor;
+  --color-paper: currentcolor;
+  --color-paper-deep: currentcolor;
+  --color-paper-inset: currentcolor;
+  --color-muted: currentcolor;
+  --color-line: currentcolor;
+  --color-ink: currentcolor;
+  --color-ink-deep: currentcolor;
+  --color-ink-mid: currentcolor;
+  --color-ink-soft: currentcolor;
+  --color-sprout: currentcolor;
+  --color-sprout-fill: currentcolor;
+  --color-valid: currentcolor;
+  --color-expired: currentcolor;
+  --radius-sm: 0;
+  --radius-md: 0;
+  --radius-lg: 0;
+  --radius-xl: 0;
+  --radius-2xl: 0;
+  --radius-3xl: 0;
+  --radius-4xl: 0;
+}
