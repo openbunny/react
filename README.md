@@ -32,6 +32,16 @@ bun add github:openbunny/react @base-ui/react react react-dom
 `react`, `react-dom` and `@base-ui/react` are peer dependencies. Each stays a
 single copy in the consumer's tree.
 
+`dist` is not committed. A git install builds it through the `prepare` script.
+`bun` runs the lifecycle scripts of dependencies only for packages listed in
+`trustedDependencies`, and not at all when `install.ignoreScripts` is `true`.
+When the package is not listed or `install.ignoreScripts` is `true`, the install
+succeeds and `dist` is missing. Add the listing to the consumer `package.json`:
+
+```json
+{ "trustedDependencies": ["@openbunny/react"] }
+```
+
 ## Usage
 
 ```tsx
