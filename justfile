@@ -31,7 +31,7 @@ parity:
     fi
     bun run test:parity
 
-check:
+check: install
     #!/usr/bin/env bash
     set -uo pipefail
     failed=""

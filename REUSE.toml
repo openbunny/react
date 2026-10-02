@@ -1,6 +1,7 @@
 version = 1
 SPDX-PackageName = "openbunny-react"
 SPDX-PackageSupplier = "OpenBunny"
+SPDX-PackageDownloadLocation = "https://github.com/openbunny/react"
 
 [[annotations]]
 path = "**"

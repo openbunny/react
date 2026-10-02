@@ -22,8 +22,7 @@ as a prop of type `ReactNode`.
 
 ## Install
 
-The package is `private: true` and not on a registry. Depend on a checkout or a
-packed tarball (`bun pm pack`).
+The package is published to npm as `@openbunny/react`.
 
 ```sh
 bun add @openbunny/react @base-ui/react react react-dom

@@ -1,0 +1,60 @@
+name: Release
+on:
+  push:
+    tags: ["v*"]
+permissions: {}
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  check:
+    name: Check
+    permissions:
+      contents: read
+    uses: openbunny/.github/.github/workflows/reusable-check.yml@9b06a5769f9356c4a192dd824e9d11b38d4bd2ff
+
+  gitleaks:
+    name: gitleaks
+    permissions:
+      contents: read
+    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@9b06a5769f9356c4a192dd824e9d11b38d4bd2ff
+
+  reuse:
+    name: reuse
+    permissions:
+      contents: read
+    uses: openbunny/.github/.github/workflows/reusable-reuse.yml@9b06a5769f9356c4a192dd824e9d11b38d4bd2ff
+
+  npm:
+    name: Publish npm package
+    needs: [check, gitleaks, reuse]
+    permissions:
+      contents: read
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    environment: release
+    env:
+      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+    steps:
+      - name: require NPM_TOKEN
+        run: |
+          if [ -z "$NPM_TOKEN" ]; then
+            echo "NPM_TOKEN is not set: add it as a secret of the release environment of this repository" >&2
+            exit 1
+          fi
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: jdx/mise-action@7a4e45a543138629540c9a1616d08632b893e492 # v5.0.1
+        with:
+          cache: false
+      - run: just install
+      - name: tag equals package version
+        env:
+          TAG: ${{ github.ref_name }}
+        run: test "v$(bun -e "console.log(require('./package.json').version)")" = "$TAG"
+      - run: just build
+      - name: publish
+        env:
+          NPM_CONFIG_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: bun publish --access public

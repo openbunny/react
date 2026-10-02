@@ -1,0 +1,18 @@
+name: release-please
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+permissions: {}
+jobs:
+  release-please:
+    name: Release Please
+    permissions:
+      contents: write # pushes the release commit and tag
+      pull-requests: write # opens and updates the release PR
+      issues: write # comments release links on issues the release closes
+    uses: openbunny/.github/.github/workflows/reusable-release-please.yml@9b06a5769f9356c4a192dd824e9d11b38d4bd2ff
+    with:
+      signoff: "Robot <bot@fiona.sm>"
+    secrets:
+      token: ${{ secrets.RELEASE_PLEASE_TOKEN }}

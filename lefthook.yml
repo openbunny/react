@@ -1,0 +1,17 @@
+pre-commit:
+  parallel: true
+  commands:
+    prettier:
+      glob: "*.{json,jsonc,json5,md,yml,yaml,css,mjs,ts,tsx}"
+      run: bunx prettier --write {staged_files}
+      stage_fixed: true
+
+pre-push:
+  parallel: true
+  commands:
+    lint:
+      run: just lint
+    typecheck:
+      run: just typecheck
+    test:
+      run: just test

@@ -1,0 +1,12 @@
+name: gitleaks
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions: {}
+jobs:
+  gitleaks:
+    name: gitleaks
+    permissions:
+      contents: read
+    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@9b06a5769f9356c4a192dd824e9d11b38d4bd2ff
