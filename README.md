@@ -118,7 +118,7 @@ Types and helpers:
 
 - `PlateAsset`: `gifSrc`, `staticSrc` (strings), `width`, `height` (numbers).
 - `CommandStep`: `command` and `comment` (strings).
-- `CopyText`: `caption?`, `copiedCaption?`, `failureHint?`.
+- `CopyText`: `caption?`, `copiedCaption?`, `failureHint?`, `onCopy?`.
 - `shellTokens(command)` returns `ShellToken[]`; it throws on unbalanced quotes.
 - `formatLongDate(isoDate)` formats an ISO date for `PageTitle`.
 - `cn(...classes)` merges class names.

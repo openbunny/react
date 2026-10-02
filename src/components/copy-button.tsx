@@ -14,12 +14,12 @@ export type CopyText = {
   readonly failureHint?: string
   readonly caption?: string
   readonly copiedCaption?: string
+  readonly onCopy?: () => void
 }
 
 type CopyButtonProps = CopyText & {
   readonly text: string
   readonly label: string
-  readonly onCopy?: () => void
 }
 
 export function CopyButton({
