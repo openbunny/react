@@ -1,7 +1,7 @@
 # @openbunny/react
 
-> **Work in progress.** No release exists yet. Names, identifiers and
-> interfaces can change without notice.
+> **Work in progress.** Names, identifiers and interfaces can change without
+> notice.
 
 Generic React components for OpenBunny sites. The package ships components and
 helpers with no site content.
@@ -25,17 +25,15 @@ as a prop of type `ReactNode`.
 
 ## Install
 
-The package is not published. Until the first release, it installs from the
-repository.
-
 ```sh
-bun add github:openbunny/react @base-ui/react react react-dom
+npm install @openbunny/react @base-ui/react react react-dom
 ```
 
 `react`, `react-dom` and `@base-ui/react` are peer dependencies. Each stays a
 single copy in the consumer's tree.
 
-`dist` is not committed. A git install builds it through the `prepare` script.
+For a Git install, use `bun add github:openbunny/react`. `dist` is not committed;
+the Git install builds it through the `prepare` script.
 `bun` runs the lifecycle scripts of dependencies only for packages listed in
 `trustedDependencies`, and not at all when `install.ignoreScripts` is `true`.
 When the package is not listed or `install.ignoreScripts` is `true`, the install
