@@ -11,19 +11,19 @@ jobs:
     name: Check
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-check.yml@0ef30bf859265abac45761ddb0907022555ab7c5
+    uses: openbunny/.github/.github/workflows/reusable-check.yml@2383033519e5dd89bfd4e832659933a145e7acde
 
   gitleaks:
     name: gitleaks
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@0ef30bf859265abac45761ddb0907022555ab7c5
+    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@2383033519e5dd89bfd4e832659933a145e7acde
 
   reuse:
     name: reuse
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-reuse.yml@0ef30bf859265abac45761ddb0907022555ab7c5
+    uses: openbunny/.github/.github/workflows/reusable-reuse.yml@2383033519e5dd89bfd4e832659933a145e7acde
 
   npm:
     name: Publish npm package

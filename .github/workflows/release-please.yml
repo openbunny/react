@@ -11,7 +11,7 @@ jobs:
       contents: write # pushes the release commit and tag
       pull-requests: write # opens and updates the release PR
       issues: write # comments release links on issues the release closes
-    uses: openbunny/.github/.github/workflows/reusable-release-please.yml@0ef30bf859265abac45761ddb0907022555ab7c5
+    uses: openbunny/.github/.github/workflows/reusable-release-please.yml@2383033519e5dd89bfd4e832659933a145e7acde
     with:
       signoff: "Robot <bot@fiona.sm>"
     secrets:

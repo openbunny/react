@@ -14,6 +14,6 @@ jobs:
     permissions:
       contents: read
       id-token: write # the called workflow mints the OIDC token that signs published results
-    uses: openbunny/.github/.github/workflows/reusable-scorecard.yml@0ef30bf859265abac45761ddb0907022555ab7c5
+    uses: openbunny/.github/.github/workflows/reusable-scorecard.yml@2383033519e5dd89bfd4e832659933a145e7acde
     with:
       publish: true
