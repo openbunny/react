@@ -36,6 +36,7 @@
     "./styles.css": "./dist/styles.css"
   },
   "scripts": {
+    "prepare": "bun run build",
     "build": "rm -rf dist && tsc -p tsconfig.build.json && cp src/styles.css dist/styles.css",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
