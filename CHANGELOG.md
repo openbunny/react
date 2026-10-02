@@ -2,10 +2,9 @@
 
 ## [0.1.1](https://github.com/openbunny/react/compare/v0.1.0...v0.1.1) (2026-10-02)
 
-
 ### Bug Fixes
 
-* forward command copy callbacks ([520ca20](https://github.com/openbunny/react/commit/520ca202b45a26d7d43f54c2a64402a640bc9b80))
+- forward command copy callbacks ([520ca20](https://github.com/openbunny/react/commit/520ca202b45a26d7d43f54c2a64402a640bc9b80))
 
 ## 0.1.0 (2026-10-02)
 
