@@ -35,14 +35,6 @@ jobs:
     timeout-minutes: 15
     environment: release
     steps:
-      - name: require NPM_TOKEN
-        env:
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          if [ -z "$NPM_TOKEN" ]; then
-            echo "NPM_TOKEN is not set: add it as a secret of the release environment of this repository" >&2
-            exit 1
-          fi
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
@@ -61,6 +53,4 @@ jobs:
         run: test "v$(bun -e "console.log(require('./package.json').version)")" = "$TAG"
       - run: just build
       - name: publish
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: npm publish --provenance --access public
+        run: npm publish --access public
