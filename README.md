@@ -1,5 +1,8 @@
 # @openbunny/react
 
+> **Work in progress.** No release exists yet. Names, identifiers and
+> interfaces can change without notice.
+
 Generic React components for OpenBunny sites. The package ships components and
 helpers with no site content.
 
