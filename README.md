@@ -22,10 +22,11 @@ as a prop of type `ReactNode`.
 
 ## Install
 
-The package is published to npm as `@openbunny/react`.
+The package is not published. Until the first release, it installs from the
+repository.
 
 ```sh
-bun add @openbunny/react @base-ui/react react react-dom
+bun add github:openbunny/react @base-ui/react react react-dom
 ```
 
 `react`, `react-dom` and `@base-ui/react` are peer dependencies. Each stays a

@@ -7,11 +7,6 @@ pre-commit:
       stage_fixed: true
 
 pre-push:
-  parallel: true
   commands:
-    lint:
-      run: just lint
-    typecheck:
-      run: just typecheck
-    test:
-      run: just test
+    check:
+      run: just check

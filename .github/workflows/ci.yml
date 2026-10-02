@@ -9,4 +9,4 @@ jobs:
     name: Check
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-check.yml@9b06a5769f9356c4a192dd824e9d11b38d4bd2ff
+    uses: openbunny/.github/.github/workflows/reusable-check.yml@0ef30bf859265abac45761ddb0907022555ab7c5
