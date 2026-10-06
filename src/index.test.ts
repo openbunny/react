@@ -10,6 +10,8 @@ const sourceRoot = import.meta.dirname
 const components = [
   "Button",
   "ChevronIcon",
+  "Cite",
+  "CiteGroup",
   "CommandBlock",
   "CommandLine",
   "CopyButton",
@@ -18,13 +20,20 @@ const components = [
   "PageTitle",
   "Plate",
   "PlateHeader",
+  "References",
+  "Screenshot",
   "SectionHeading",
   "ShellCommand",
   "SkipLink",
   "StatusPage",
 ]
 
-const helpers = ["cn", "formatLongDate", "shellTokens"]
+const helpers = [
+  "cn",
+  "createCitationRegistry",
+  "formatLongDate",
+  "shellTokens",
+]
 
 describe("entry point", () => {
   it("exports exactly the generic components and helpers", () => {
@@ -61,6 +70,9 @@ describe("entry point", () => {
       ...helpers,
       "PlateAsset",
       "CommandStep",
+      "Reference",
+      "CitationRegistry",
+      "BackLinkLabel",
     ]) {
       expect(reference).toContain(`\`${name}`)
     }

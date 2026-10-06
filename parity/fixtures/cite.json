@@ -1,0 +1,12 @@
+{
+  "cases": [
+    {
+      "name": "first",
+      "html": "<a id=\"cite-a-1\" href=\"#ref-a\" class=\"text-ink hover:text-sprout\">[1]</a>"
+    },
+    {
+      "name": "repeat",
+      "html": "<a id=\"cite-a-2\" href=\"#ref-a\" class=\"text-ink hover:text-sprout\">[2]</a>"
+    }
+  ]
+}

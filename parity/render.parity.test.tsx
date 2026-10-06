@@ -4,6 +4,8 @@ import { renderToStaticMarkup } from "react-dom/server"
 import { describe, expect, it } from "vitest"
 
 import { ChevronIcon } from "../src/components/chevron-icon.tsx"
+import { CiteGroup } from "../src/components/cite-group.tsx"
+import { Cite } from "../src/components/cite.tsx"
 import { CommandBlock } from "../src/components/command-block.tsx"
 import { CommandLine } from "../src/components/command-line.tsx"
 import { CopyButton } from "../src/components/copy-button.tsx"
@@ -11,6 +13,8 @@ import { PageSection } from "../src/components/page-section.tsx"
 import { PageShell } from "../src/components/page-shell.tsx"
 import { PageTitle } from "../src/components/page-title.tsx"
 import { PlateHeader } from "../src/components/plate-header.tsx"
+import { References } from "../src/components/references.tsx"
+import { Screenshot } from "../src/components/screenshot.tsx"
 import { Plate } from "../src/components/plate.tsx"
 import { SectionHeading } from "../src/components/section-heading.tsx"
 import { ShellCommand } from "../src/components/shell-command.tsx"
@@ -29,6 +33,8 @@ type Fixture = {
 const components: Record<string, unknown> = {
   button: Button,
   "chevron-icon": ChevronIcon,
+  cite: Cite,
+  "cite-group": CiteGroup,
   "command-block": CommandBlock,
   "command-line": CommandLine,
   "copy-button": CopyButton,
@@ -37,6 +43,8 @@ const components: Record<string, unknown> = {
   "page-title": PageTitle,
   plate: Plate,
   "plate-header": PlateHeader,
+  references: References,
+  screenshot: Screenshot,
   "section-heading": SectionHeading,
   "shell-command": ShellCommand,
   "skip-link": SkipLink,

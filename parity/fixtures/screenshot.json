@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {
+      "name": "plain",
+      "html": "<figure class=\"flex flex-col gap-2\"><div class=\"border border-line bg-paper-inset p-1.5\"><img src=\"/a.jpg\" alt=\"a results screen\" width=\"1920\" height=\"1080\" loading=\"lazy\" decoding=\"async\" class=\"block h-auto w-full\"/></div><figcaption class=\"text-right font-mono text-[0.75rem] leading-normal text-muted\">old screenshot</figcaption></figure>"
+    }
+  ]
+}

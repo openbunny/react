@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {
+      "name": "repeat and unlinked",
+      "html": "<ol class=\"mt-4 flex flex-col gap-3 font-display text-[0.85rem] leading-[1.6]\"><li id=\"ref-a\">Ada, A. (2001). first. venue a. <a href=\"https://example.com/a\" class=\"link\">source</a> <a href=\"#cite-a-1\" class=\"link\"><span class=\"sr-only\">back to citation 1, occurrence 1 of 2</span><span aria-hidden=\"true\">^1</span></a> <a href=\"#cite-a-2\" class=\"link\"><span class=\"sr-only\">back to citation 1, occurrence 2 of 2</span><span aria-hidden=\"true\">^2</span></a></li><li id=\"ref-b\">Byte, B. (2002). second. venue b. <a href=\"#cite-b-1\" class=\"link\"><span class=\"sr-only\">back to citation 2</span><span aria-hidden=\"true\">^</span></a></li></ol>"
+    }
+  ]
+}

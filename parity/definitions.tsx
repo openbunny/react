@@ -1,3 +1,8 @@
+import {
+  createCitationRegistry,
+  type CitationRegistry,
+} from "../src/lib/citation-registry.ts"
+
 const asset = { gifSrc: "/a.gif", staticSrc: "/a.png", width: 10, height: 20 }
 const steps = [
   { command: "one --a", comment: "First step." },
@@ -18,6 +23,40 @@ const lowercaseLongDate = (isoDate: string): string =>
   })
     .format(new Date(`${isoDate}T00:00:00Z`))
     .toLowerCase()
+
+const references = [
+  {
+    id: "a",
+    authors: "Ada, A.",
+    year: 2001,
+    title: "first",
+    venue: "venue a",
+    url: "https://example.com/a",
+  },
+  {
+    id: "b",
+    authors: "Byte, B.",
+    year: 2002,
+    title: "second",
+    venue: "venue b",
+  },
+]
+const citedRegistry = (ids: readonly string[]): CitationRegistry => {
+  const registry = createCitationRegistry()
+  for (const id of ids) {
+    registry.numberOf(id)
+    registry.recordOccurrence(id)
+  }
+  return registry
+}
+const lowercaseBackLinkLabel = (
+  number: number,
+  occurrence: number,
+  occurrences: number
+): string =>
+  occurrences > 1
+    ? `back to citation ${String(number)}, occurrence ${String(occurrence)} of ${String(occurrences)}`
+    : `back to citation ${String(number)}`
 
 export type ParityCase = {
   readonly component: string
@@ -167,6 +206,58 @@ export const parityCases: ReadonlyArray<ParityCase> = [
     adoption: {
       changedLabel: "site last changed",
       formatDate: lowercaseLongDate,
+    },
+  },
+  {
+    component: "cite",
+    name: "first",
+    props: {
+      id: "a",
+      get registry() {
+        return createCitationRegistry()
+      },
+    },
+  },
+  {
+    component: "cite",
+    name: "repeat",
+    props: {
+      id: "a",
+      get registry() {
+        return citedRegistry(["b", "a"])
+      },
+    },
+  },
+  {
+    component: "cite-group",
+    name: "pair",
+    props: {
+      ids: ["a", "b"],
+      get registry() {
+        return createCitationRegistry()
+      },
+    },
+  },
+  {
+    component: "references",
+    name: "repeat and unlinked",
+    props: {
+      items: references,
+      get registry() {
+        return citedRegistry(["a", "b", "a"])
+      },
+    },
+    adoption: { sourceLabel: "source", backLinkLabel: lowercaseBackLinkLabel },
+  },
+  {
+    component: "screenshot",
+    name: "plain",
+    props: {
+      src: "/a.jpg",
+      alt: "a results screen",
+      width: 1920,
+      height: 1080,
+      caption: "old screenshot",
     },
   },
 ]

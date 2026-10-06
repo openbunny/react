@@ -13,12 +13,16 @@ helpers with no site content.
 | `CommandBlock`, `CommandLine`, `ShellCommand` | Numbered command steps, one command row, token spans  |
 | `CopyButton`, `Button`                        | Clipboard button, base button                         |
 | `SkipLink`, `ChevronIcon`                     | Skip-to-content link, chevron icon                    |
+| `Cite`, `CiteGroup`, `References`             | Numbered citation markers and their reference list    |
+| `Screenshot`                                  | Bordered image with a caption below                   |
 
 The package renders no site identity. Each component takes its text, artwork
 and behaviour through props. Where a prop has a default, the default is neutral
 English. No component imports `next`, an analytics client or a router, and none
-renders a link. A caller that needs a link passes its own element as a child or
-as a prop of type `ReactNode`.
+renders a link to a route. The citation components render plain `<a>` elements
+to in-page `#cite-` and `#ref-` anchors and to each `Reference`'s `url`. A
+caller that needs a link to a route passes its own element as a child or as a
+prop of type `ReactNode`.
 
 ## Install
 
@@ -70,6 +74,7 @@ that respect.
 `tailwind.css` from the theme maps each colour to a Tailwind utility. The
 components use these utilities: `border-line`, `bg-paper`, `bg-paper-inset`,
 `bg-foreground`, `text-background`, `text-foreground`, `text-ink`, `text-muted`,
+`hover:text-sprout`,
 `border-foreground`, `ring` and the `font-display`, `font-sc` and `font-mono`
 families. `styles.css` reads `--ink-deep`, `--ink-mid`, `--sprout` and
 `--font-weight-bold`. Components assume square corners (`--radius-*` is `0`).
@@ -83,8 +88,8 @@ families. `styles.css` reads `--ink-deep`, `--ink-mid`, `--sprout` and
 | `.js-only`                          | `@openbunny/react/styles.css` | `CopyButton`   | hidden under `@media (scripting: none)`                             |
 
 `src/styles.test.ts` fails when a component uses a custom class that neither
-this table nor the theme defines. The theme defines `.link` and `.chip`; no
-component uses them.
+this table nor the theme defines. The theme defines `.link` and `.chip`;
+`References` uses `.link` for its source and back-links.
 
 ### Document contract
 
@@ -104,6 +109,10 @@ Every prop is required unless its row shows a default or `?`.
 | `CommandBlock`   | `id`, `number`, `title`, `steps`: `CommandStep[]`, `note?`, `copyAll?` (`false`), `copy?`, `copyLabel?`, `lead?` |
 | `CommandLine`    | `command`, `copy?`, `copyLabel?`                                                                                 |
 | `CopyButton`     | `text`, `label`, `caption?`, `copiedCaption?`, `failureHint?`, `onCopy?`                                         |
+| `Cite`           | `id`, `registry`: `CitationRegistry`                                                                             |
+| `CiteGroup`      | `ids`, `registry`: `CitationRegistry`                                                                            |
+| `References`     | `items`: `Reference[]`, `registry`: `CitationRegistry`, `sourceLabel?`, `backLinkLabel?`: `BackLinkLabel`        |
+| `Screenshot`     | `src`, `alt`, `width`, `height`, `caption`: `ReactNode`                                                          |
 | `PageSection`    | `id`, `className?`, `children`                                                                                   |
 | `PageShell`      | `children`                                                                                                       |
 | `PageTitle`      | `title`, `lastChangedAt?`, `changedLabel?`, `formatDate?`                                                        |
@@ -121,6 +130,15 @@ Types and helpers:
 - `CopyText`: `caption?`, `copiedCaption?`, `failureHint?`, `onCopy?`.
 - `shellTokens(command)` returns `ShellToken[]`; it throws on unbalanced quotes.
 - `formatLongDate(isoDate)` formats an ISO date for `PageTitle`.
+- `Reference`: `id`, `authors`, `title`, `venue` (strings), `year` (number),
+  `url?`.
+- `createCitationRegistry()` returns a `CitationRegistry`. Create one per
+  page and pass it to every `Cite`, `CiteGroup` and `References` on that page.
+  It numbers sources by first citation, so `References` must render after
+  every marker; it lists only cited sources and throws when a cited `id` has
+  no `Reference` in `items`.
+- `BackLinkLabel(number, occurrence, occurrences)` returns the screen-reader
+  name of one back-link.
 - `cn(...classes)` merges class names.
 
 `bun run build` also emits declarations in `dist/index.d.ts`.
@@ -136,6 +154,8 @@ Copy, captions and labels are props with neutral English defaults.
 | `CommandBlock` | `copy`, `copyLabel`, `copyAllCaption`, `copyAllLabel`, `note`, `lead`    |
 | `PageTitle`    | `changedLabel`, `formatDate(isoDate)`                                    |
 | `SkipLink`     | `label`                                                                  |
+| `References`   | `sourceLabel`, `backLinkLabel(number, occurrence, occurrences)`          |
+| `Screenshot`   | `alt` (required), `caption` (required)                                   |
 
 `CopyButton` reports a successful copy through `onCopy`. The consumer attaches
 analytics there; the package contains none.

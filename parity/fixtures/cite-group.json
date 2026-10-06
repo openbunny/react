@@ -1,0 +1,8 @@
+{
+  "cases": [
+    {
+      "name": "pair",
+      "html": "<span class=\"whitespace-nowrap\">[<a id=\"cite-a-1\" href=\"#ref-a\" class=\"text-ink hover:text-sprout\">1</a>, <a id=\"cite-b-1\" href=\"#ref-b\" class=\"text-ink hover:text-sprout\">2</a>]</span>"
+    }
+  ]
+}
