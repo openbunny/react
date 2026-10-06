@@ -2,11 +2,11 @@
   "cases": [
     {
       "name": "plain",
-      "html": "<link rel=\"preload\" as=\"image\" href=\"/a.gif\"/><link rel=\"preload\" as=\"image\" href=\"/a.png\"/><div class=\"flex min-h-svh items-center justify-center px-6\"><main id=\"main\" class=\"flex max-w-[38rem] flex-col gap-6\"><span aria-hidden=\"true\" class=\"inline-block w-[245px]\"><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full motion-reduce:hidden\"/><img src=\"/a.png\" alt=\"\" width=\"10\" height=\"20\" class=\"plate hidden h-auto w-full motion-reduce:block\"/></span><h1 class=\"font-display text-[1.4rem]\">Heading</h1><p class=\"font-display text-[0.92rem] leading-[1.7]\">Body</p><a href=\"/\">Back</a></main></div>"
+      "html": "<div class=\"flex min-h-svh items-center justify-center px-6\"><main id=\"main\" class=\"flex max-w-[38rem] flex-col gap-6\"><span aria-hidden=\"true\" class=\"inline-block w-[245px]\"><picture><source media=\"(prefers-reduced-motion: reduce)\" srcSet=\"/a.png\"/><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full\"/></picture></span><h1 class=\"font-display text-[1.4rem]\">Heading</h1><p class=\"font-display text-[0.92rem] leading-[1.7]\">Body</p><a href=\"/\">Back</a></main></div>"
     },
     {
       "name": "rich",
-      "html": "<link rel=\"preload\" as=\"image\" href=\"/a.gif\"/><link rel=\"preload\" as=\"image\" href=\"/a.png\"/><div class=\"flex min-h-svh items-center justify-center px-6\"><main id=\"main\" class=\"flex max-w-[38rem] flex-col gap-6\"><span aria-hidden=\"true\" class=\"inline-block\"><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full motion-reduce:hidden\"/><img src=\"/a.png\" alt=\"\" width=\"10\" height=\"20\" class=\"plate hidden h-auto w-full motion-reduce:block\"/></span><h1 class=\"font-display text-[1.4rem]\"><em>Rich</em></h1><p class=\"font-display text-[0.92rem] leading-[1.7]\"><strong>Body</strong></p></main></div>"
+      "html": "<div class=\"flex min-h-svh items-center justify-center px-6\"><main id=\"main\" class=\"flex max-w-[38rem] flex-col gap-6\"><span aria-hidden=\"true\" class=\"inline-block\"><picture><source media=\"(prefers-reduced-motion: reduce)\" srcSet=\"/a.png\"/><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full\"/></picture></span><h1 class=\"font-display text-[1.4rem]\"><em>Rich</em></h1><p class=\"font-display text-[0.92rem] leading-[1.7]\"><strong>Body</strong></p></main></div>"
     }
   ]
 }

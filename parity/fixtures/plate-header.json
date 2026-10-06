@@ -2,11 +2,11 @@
   "cases": [
     {
       "name": "class",
-      "html": "<link rel=\"preload\" as=\"image\" href=\"/a.gif\"/><link rel=\"preload\" as=\"image\" href=\"/a.png\"/><header class=\"mt-6 border-b border-line\"><span aria-hidden=\"true\" class=\"inline-block w-[245px]\"><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full motion-reduce:hidden\"/><img src=\"/a.png\" alt=\"\" width=\"10\" height=\"20\" class=\"plate hidden h-auto w-full motion-reduce:block\"/></span></header>"
+      "html": "<header class=\"mt-6 border-b border-line\"><span aria-hidden=\"true\" class=\"inline-block w-[245px]\"><picture><source media=\"(prefers-reduced-motion: reduce)\" srcSet=\"/a.png\"/><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full\"/></picture></span></header>"
     },
     {
       "name": "no class",
-      "html": "<link rel=\"preload\" as=\"image\" href=\"/a.gif\"/><link rel=\"preload\" as=\"image\" href=\"/a.png\"/><header class=\"mt-6 border-b border-line\"><span aria-hidden=\"true\" class=\"inline-block\"><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full motion-reduce:hidden\"/><img src=\"/a.png\" alt=\"\" width=\"10\" height=\"20\" class=\"plate hidden h-auto w-full motion-reduce:block\"/></span></header>"
+      "html": "<header class=\"mt-6 border-b border-line\"><span aria-hidden=\"true\" class=\"inline-block\"><picture><source media=\"(prefers-reduced-motion: reduce)\" srcSet=\"/a.png\"/><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full\"/></picture></span></header>"
     }
   ]
 }

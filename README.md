@@ -5,16 +5,16 @@ helpers with no site content.
 
 ## Components
 
-| Component                                     | Purpose                                               |
-| --------------------------------------------- | ----------------------------------------------------- |
-| `PageShell`, `PageSection`                    | Centred column and bordered section                   |
-| `PageTitle`, `SectionHeading`                 | Page `h1` with optional date, numbered section `h2`   |
-| `Plate`, `PlateHeader`, `StatusPage`          | Animated and static image pair, header, status layout |
-| `CommandBlock`, `CommandLine`, `ShellCommand` | Numbered command steps, one command row, token spans  |
-| `CopyButton`, `Button`                        | Clipboard button, base button                         |
-| `SkipLink`, `ChevronIcon`                     | Skip-to-content link, chevron icon                    |
-| `Cite`, `CiteGroup`, `References`             | Numbered citation markers and their reference list    |
-| `Screenshot`                                  | Bordered image with a caption below                   |
+| Component                                     | Purpose                                                           |
+| --------------------------------------------- | ----------------------------------------------------------------- |
+| `PageShell`, `PageSection`                    | Centred column and bordered section                               |
+| `PageTitle`, `SectionHeading`                 | Page `h1` with optional date, numbered section `h2`               |
+| `Plate`, `PlateHeader`, `StatusPage`          | Animated image with a reduced-motion still, header, status layout |
+| `CommandBlock`, `CommandLine`, `ShellCommand` | Numbered command steps, one command row, token spans              |
+| `CopyButton`, `Button`                        | Clipboard button, base button                                     |
+| `SkipLink`, `ChevronIcon`                     | Skip-to-content link, chevron icon                                |
+| `Cite`, `CiteGroup`, `References`             | Numbered citation markers and their reference list                |
+| `Screenshot`                                  | Bordered image with a caption below                               |
 
 The package renders no site identity. Each component takes its text, artwork
 and behaviour through props. Where a prop has a default, the default is neutral
@@ -125,7 +125,7 @@ Every prop is required unless its row shows a default or `?`.
 
 Types and helpers:
 
-- `PlateAsset`: `gifSrc`, `staticSrc` (strings), `width`, `height` (numbers).
+- `PlateAsset`: `animatedSrc` (a GIF or an animated WebP), `staticSrc` (strings), `width`, `height` (numbers).
 - `CommandStep`: `command` and `comment` (strings).
 - `CopyText`: `caption?`, `copiedCaption?`, `failureHint?`, `onCopy?`.
 - `shellTokens(command)` returns `ShellToken[]`; it throws on unbalanced quotes.

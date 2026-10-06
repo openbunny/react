@@ -7,7 +7,7 @@ import type { PlateAsset } from "../lib/plate-asset.ts"
 import { StatusPage } from "./status-page.tsx"
 
 const ASSET: PlateAsset = {
-  gifSrc: "/plate.gif",
+  animatedSrc: "/plate.gif",
   staticSrc: "/plate-static.png",
   width: 490,
   height: 330,

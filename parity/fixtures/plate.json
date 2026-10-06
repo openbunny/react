@@ -2,11 +2,11 @@
   "cases": [
     {
       "name": "plain",
-      "html": "<link rel=\"preload\" as=\"image\" href=\"/a.gif\"/><link rel=\"preload\" as=\"image\" href=\"/a.png\"/><span aria-hidden=\"true\" class=\"inline-block\"><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full motion-reduce:hidden\"/><img src=\"/a.png\" alt=\"\" width=\"10\" height=\"20\" class=\"plate hidden h-auto w-full motion-reduce:block\"/></span>"
+      "html": "<span aria-hidden=\"true\" class=\"inline-block\"><picture><source media=\"(prefers-reduced-motion: reduce)\" srcSet=\"/a.png\"/><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full\"/></picture></span>"
     },
     {
       "name": "class",
-      "html": "<link rel=\"preload\" as=\"image\" href=\"/a.gif\"/><link rel=\"preload\" as=\"image\" href=\"/a.png\"/><span aria-hidden=\"true\" class=\"inline-block w-24\"><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full motion-reduce:hidden\"/><img src=\"/a.png\" alt=\"\" width=\"10\" height=\"20\" class=\"plate hidden h-auto w-full motion-reduce:block\"/></span>"
+      "html": "<span aria-hidden=\"true\" class=\"inline-block w-24\"><picture><source media=\"(prefers-reduced-motion: reduce)\" srcSet=\"/a.png\"/><img src=\"/a.gif\" alt=\"\" width=\"10\" height=\"20\" class=\"plate h-auto w-full\"/></picture></span>"
     }
   ]
 }

@@ -3,7 +3,12 @@ import {
   type CitationRegistry,
 } from "../src/lib/citation-registry.ts"
 
-const asset = { gifSrc: "/a.gif", staticSrc: "/a.png", width: 10, height: 20 }
+const asset = {
+  animatedSrc: "/a.gif",
+  staticSrc: "/a.png",
+  width: 10,
+  height: 20,
+}
 const steps = [
   { command: "one --a", comment: "First step." },
   { command: "two 'b c'", comment: "Second step." },

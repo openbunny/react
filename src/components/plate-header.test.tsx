@@ -7,7 +7,7 @@ import type { PlateAsset } from "../lib/plate-asset.ts"
 import { PlateHeader } from "./plate-header.tsx"
 
 const ASSET: PlateAsset = {
-  gifSrc: "/plate.gif",
+  animatedSrc: "/plate.gif",
   staticSrc: "/plate-static.png",
   width: 490,
   height: 330,
@@ -25,15 +25,15 @@ describe("PlateHeader", () => {
     expect(header?.className).toBe("mt-6 border-b border-line")
   })
 
-  it("renders both the animated and the reduced-motion source", () => {
+  it("renders the animated source and the reduced-motion source", () => {
     const { container } = render(
       <PlateHeader asset={ASSET} plateClassName="w-[245px]" />
     )
-    const sources = [...container.querySelectorAll("img")].map((image) =>
-      image.getAttribute("src")
-    )
+    const image = container.querySelector("img")
+    const source = container.querySelector("picture > source")
 
-    expect(sources).toEqual([ASSET.gifSrc, ASSET.staticSrc])
+    expect(image).toHaveAttribute("src", ASSET.animatedSrc)
+    expect(source).toHaveAttribute("srcset", ASSET.staticSrc)
   })
 
   it("passes the display width through to the plate", () => {

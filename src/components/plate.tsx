@@ -12,20 +12,19 @@ export function Plate({
 }): ReactElement {
   return (
     <span aria-hidden="true" className={cn("inline-block", className)}>
-      <img
-        src={asset.gifSrc}
-        alt=""
-        width={asset.width}
-        height={asset.height}
-        className="plate h-auto w-full motion-reduce:hidden"
-      />
-      <img
-        src={asset.staticSrc}
-        alt=""
-        width={asset.width}
-        height={asset.height}
-        className="plate hidden h-auto w-full motion-reduce:block"
-      />
+      <picture>
+        <source
+          media="(prefers-reduced-motion: reduce)"
+          srcSet={asset.staticSrc}
+        />
+        <img
+          src={asset.animatedSrc}
+          alt=""
+          width={asset.width}
+          height={asset.height}
+          className="plate h-auto w-full"
+        />
+      </picture>
     </span>
   )
 }
