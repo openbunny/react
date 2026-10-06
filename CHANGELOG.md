@@ -1,5 +1,21 @@
 # Changelog
 
+## [0.3.0](https://github.com/openbunny/react/compare/v0.2.0...v0.3.0) (2026-10-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* PlateAsset.gifSrc is renamed animatedSrc, since the animation may be an animated WebP as well as a GIF. The motion-reduce classes on the plate images are gone.
+
+### Features
+
+* render Plate as a picture with one image ([3b50d3f](https://github.com/openbunny/react/commit/3b50d3ff6149b7af2c1c04f2f97383c68bf3c171))
+
+
+### Performance Improvements
+
+* render CopyButton as a native button ([19d1799](https://github.com/openbunny/react/commit/19d1799659932f4d13805ed493198a09b7856845))
+
 ## [0.2.0](https://github.com/openbunny/react/compare/v0.1.1...v0.2.0) (2026-10-06)
 
 ### Features
