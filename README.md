@@ -72,12 +72,11 @@ that respect.
 ### Theme custom properties and Tailwind tokens
 
 `tailwind.css` from the theme maps each colour to a Tailwind utility. The
-components use these utilities: `border-line`, `bg-paper`, `bg-paper-inset`,
-`bg-foreground`, `text-background`, `text-foreground`, `text-ink`, `text-muted`,
-`hover:text-sprout`,
-`border-foreground`, `ring` and the `font-display`, `font-sc` and `font-mono`
-families. `styles.css` reads `--ink-deep`, `--ink-mid`, `--sprout` and
-`--font-weight-bold`. Components assume square corners (`--radius-*` is `0`).
+components use the colour tokens `background`, `border`, `foreground`, `ink`,
+`line`, `muted`, `paper`, `paper-inset` and `ring` through the utilities
+`bg-*`, `border-*`, `text-*` and `ring-*`, and the `font-display`, `font-sc`
+and `font-mono` families. `styles.css` reads `--ink-deep`, `--ink-mid`,
+`--sprout` and `--font-weight-bold`. Components assume square corners (`--radius-*` is `0`).
 
 ### Component classes
 
@@ -93,8 +92,8 @@ this table nor the theme defines. The theme defines `.link` and `.chip`;
 
 ### Document contract
 
-- The page has one element with `id="main"`. `SkipLink` and `StatusPage` target
-  it.
+- The page has one element with `id="main"`. `SkipLink` targets it. `StatusPage`
+  renders it, so a page that uses `StatusPage` supplies no other.
 - `:focus-visible` has a visible outline. The theme's `extension-base.css`
   provides one.
 
@@ -102,26 +101,26 @@ this table nor the theme defines. The theme defines `.link` and `.chip`;
 
 Every prop is required unless its row shows a default or `?`.
 
-| Component        | Props                                                                                                            |
-| ---------------- | ---------------------------------------------------------------------------------------------------------------- |
-| `Button`         | `variant` (`"outline"`), `size` (`"xs"`), and every prop of `@base-ui/react` `Button`                            |
-| `ChevronIcon`    | `direction`: `"left"` or `"right"`                                                                               |
-| `CommandBlock`   | `id`, `number`, `title`, `steps`: `CommandStep[]`, `note?`, `copyAll?` (`false`), `copy?`, `copyLabel?`, `lead?` |
-| `CommandLine`    | `command`, `copy?`, `copyLabel?`                                                                                 |
-| `CopyButton`     | `text`, `label`, `caption?`, `copiedCaption?`, `failureHint?`, `onCopy?`                                         |
-| `Cite`           | `id`, `registry`: `CitationRegistry`                                                                             |
-| `CiteGroup`      | `ids`, `registry`: `CitationRegistry`                                                                            |
-| `References`     | `items`: `Reference[]`, `registry`: `CitationRegistry`, `sourceLabel?`, `backLinkLabel?`: `BackLinkLabel`        |
-| `Screenshot`     | `src`, `alt`, `width`, `height`, `caption`: `ReactNode`                                                          |
-| `PageSection`    | `id`, `className?`, `children`                                                                                   |
-| `PageShell`      | `children`                                                                                                       |
-| `PageTitle`      | `title`, `lastChangedAt?`, `changedLabel?`, `formatDate?`                                                        |
-| `Plate`          | `asset`: `PlateAsset`, `className?`                                                                              |
-| `PlateHeader`    | `asset`: `PlateAsset`, `plateClassName`                                                                          |
-| `SectionHeading` | `number`, `children`                                                                                             |
-| `ShellCommand`   | `command`                                                                                                        |
-| `SkipLink`       | `label?`                                                                                                         |
-| `StatusPage`     | `asset`: `PlateAsset`, `plateClassName`, `heading`, `children`, `actions`                                        |
+| Component        | Props                                                                                                                                                |
+| ---------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `Button`         | `variant` (`"outline"`), `size` (`"xs"`), and every prop of `@base-ui/react` `Button`                                                                |
+| `ChevronIcon`    | `direction`: `"left"` or `"right"`                                                                                                                   |
+| `CommandBlock`   | `id`, `number`, `title`, `steps`: `CommandStep[]`, `note?`, `copyAll?` (`false`), `copyAllCaption?`, `copyAllLabel?`, `copy?`, `copyLabel?`, `lead?` |
+| `CommandLine`    | `command`, `copy?`, `copyLabel?`                                                                                                                     |
+| `CopyButton`     | `text`, `label`, `caption?`, `copiedCaption?`, `failureHint?`, `onCopy?`                                                                             |
+| `Cite`           | `id`, `registry`: `CitationRegistry`                                                                                                                 |
+| `CiteGroup`      | `ids`, `registry`: `CitationRegistry`                                                                                                                |
+| `References`     | `items`: `Reference[]`, `registry`: `CitationRegistry`, `sourceLabel?`, `backLinkLabel?`: `BackLinkLabel`                                            |
+| `Screenshot`     | `src`, `alt`, `width`, `height`, `caption`: `ReactNode`                                                                                              |
+| `PageSection`    | `id`, `className?`, `children`                                                                                                                       |
+| `PageShell`      | `children`                                                                                                                                           |
+| `PageTitle`      | `title`, `lastChangedAt?`, `changedLabel?`, `formatDate?`                                                                                            |
+| `Plate`          | `asset`: `PlateAsset`, `className?`                                                                                                                  |
+| `PlateHeader`    | `asset`: `PlateAsset`, `plateClassName`                                                                                                              |
+| `SectionHeading` | `number`, `children`                                                                                                                                 |
+| `ShellCommand`   | `command`                                                                                                                                            |
+| `SkipLink`       | `label?`                                                                                                                                             |
+| `StatusPage`     | `asset`: `PlateAsset`, `plateClassName`, `heading`, `children`, `actions`                                                                            |
 
 Types and helpers:
 
@@ -165,8 +164,8 @@ analytics there; the package contains none.
 Each component is compared with markup captured once from the component it was
 extracted from. The captured files are `parity/fixtures/<component>.json`. The
 package imports nothing from the original and needs no checkout of it.
-`parity/fixtures/README.md` states that the fixtures are frozen and when they
-change.
+`parity/fixtures/README.md` states that the fixtures are frozen and how a new
+case gets its fixture entry.
 
 Package defaults differ from the original defaults in capitalisation. A case with
 an `adoption` entry in `parity/definitions.tsx` lists the props that reproduce
