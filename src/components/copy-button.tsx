@@ -3,9 +3,10 @@
 import { useEffect, useRef, useState } from "react"
 import type { ReactElement } from "react"
 
-import { Button } from "./ui/button.tsx"
-
 type CopyState = "idle" | "copied" | "failed"
+
+const BUTTON_CLASS =
+  "inline-flex shrink-0 items-center justify-center border bg-clip-padding font-medium whitespace-nowrap transition-all outline-none select-none focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/50 disabled:pointer-events-none disabled:opacity-50 aria-invalid:border-foreground aria-invalid:ring-3 aria-invalid:ring-foreground/20 aria-expanded:bg-foreground/5 aria-expanded:text-foreground h-6 gap-1 px-2.5 border-foreground/45 bg-paper font-sc text-[0.65rem] hover:border-ink hover:bg-paper hover:text-ink"
 
 const DIM_MS = 450
 const ANNOUNCE_MS = 1600
@@ -77,17 +78,19 @@ export function CopyButton({
 
   return (
     <span className="js-only inline-flex flex-col items-end gap-1">
-      <Button
+      <button
         type="button"
+        tabIndex={0}
+        data-slot="button"
         onClick={() => {
           void copy()
         }}
         aria-label={label}
         data-copied={dimmed ? "" : undefined}
-        className="border-foreground/45 bg-paper font-sc text-[0.65rem] hover:border-ink hover:bg-paper hover:text-ink"
+        className={BUTTON_CLASS}
       >
         <span aria-hidden="true">{dimmed ? copiedCaption : caption}</span>
-      </Button>
+      </button>
       <span
         role="status"
         className={
