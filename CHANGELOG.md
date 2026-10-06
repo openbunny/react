@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.2.0](https://github.com/openbunny/react/compare/v0.1.1...v0.2.0) (2026-10-06)
+
+
+### Features
+
+* add citation components and a captioned screenshot ([90ffcec](https://github.com/openbunny/react/commit/90ffcec735f1e7d49d9f4b822b492675d604c6f5))
+
 ## [0.1.1](https://github.com/openbunny/react/compare/v0.1.0...v0.1.1) (2026-10-02)
 
 ### Bug Fixes
