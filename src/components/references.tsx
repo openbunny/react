@@ -53,7 +53,12 @@ export function References({
             {reference.url === undefined ? null : (
               <>
                 {" "}
-                <a href={reference.url} className="link">
+                <a
+                  href={reference.url}
+                  className="link"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   {sourceLabel}
                 </a>
               </>

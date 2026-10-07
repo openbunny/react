@@ -244,10 +244,10 @@ describe("References text props", () => {
       </>
     )
 
-    expect(screen.getByRole("link", { name: "Source" })).toHaveAttribute(
-      "href",
-      "https://example.com/a"
-    )
+    const source = screen.getByRole("link", { name: "Source" })
+    expect(source).toHaveAttribute("href", "https://example.com/a")
+    expect(source).toHaveAttribute("target", "_blank")
+    expect(source).toHaveAttribute("rel", "noopener noreferrer")
   })
 
   it("renders the consumer's source and back-link labels", () => {
