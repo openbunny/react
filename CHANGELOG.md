@@ -2,10 +2,9 @@
 
 ## [0.3.1](https://github.com/openbunny/react/compare/v0.3.0...v0.3.1) (2026-10-07)
 
-
 ### Bug Fixes
 
-* open reference source links in a new tab ([#7](https://github.com/openbunny/react/issues/7)) ([9a5bfbb](https://github.com/openbunny/react/commit/9a5bfbbf7096f7d3ebe8dd8df2c8f545261f8d34))
+- open reference source links in a new tab ([#7](https://github.com/openbunny/react/issues/7)) ([9a5bfbb](https://github.com/openbunny/react/commit/9a5bfbbf7096f7d3ebe8dd8df2c8f545261f8d34))
 
 ## [0.3.0](https://github.com/openbunny/react/compare/v0.2.0...v0.3.0) (2026-10-06)
 
