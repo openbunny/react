@@ -11,19 +11,19 @@ jobs:
     name: Check
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-check.yml@2383033519e5dd89bfd4e832659933a145e7acde
+    uses: openbunny/.github/.github/workflows/reusable-check.yml@2383033519e5dd89bfd4e832659933a145e7acde # v0.2.0
 
   gitleaks:
     name: gitleaks
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@2383033519e5dd89bfd4e832659933a145e7acde
+    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@2383033519e5dd89bfd4e832659933a145e7acde # v0.2.0
 
   reuse:
     name: reuse
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-reuse.yml@2383033519e5dd89bfd4e832659933a145e7acde
+    uses: openbunny/.github/.github/workflows/reusable-reuse.yml@2383033519e5dd89bfd4e832659933a145e7acde # v0.2.0
 
   npm:
     name: Publish npm package
@@ -43,7 +43,8 @@ jobs:
           cache: false
       - uses: actions/setup-node@820762786026740c76f36085b0efc47a31fe5020 # v7.0.0
         with:
-          node-version: 24
+          # renovate: datasource=node-version depName=node
+          node-version: 24.21.0
           registry-url: https://registry.npmjs.org
           package-manager-cache: false
       - run: just install

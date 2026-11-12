@@ -9,4 +9,4 @@ jobs:
     name: gitleaks
     permissions:
       contents: read
-    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@2383033519e5dd89bfd4e832659933a145e7acde
+    uses: openbunny/.github/.github/workflows/reusable-gitleaks.yml@2383033519e5dd89bfd4e832659933a145e7acde # v0.2.0
