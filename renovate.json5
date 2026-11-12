@@ -1,7 +1,25 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>openbunny/.github"],
+  description: [
+    "Four holdbacks live below. allowedVersions drops a blocked update silently, so",
+    "the dashboard is turned back on here, against the org preset, to give every",
+    "hold one visible place and its 'closes when' a reason to be re-read.",
+  ],
+  dependencyDashboard: true,
   packageRules: [
+    {
+      description: [
+        "This package is published, so its peer ranges are a contract with consumers.",
+        "The org preset sets rangeStrategy: pin globally, and pin reaches",
+        "peerDependencies too: it would rewrite `react: ^19.3.0` to one exact version",
+        "and conflict with every consumer on another 19.x. widen is what Renovate's",
+        "own :pinAllExceptPeerDependencies preset does for peers. dependencies and",
+        "devDependencies stay pinned.",
+      ],
+      matchDepTypes: ["peerDependencies"],
+      rangeStrategy: "widen",
+    },
     {
       description: [
         "One bun version is written in three places: packageManager and engines.bun",
@@ -11,6 +29,39 @@
       ],
       matchPackageNames: ["bun"],
       groupName: "bun",
+    },
+    {
+      description: [
+        "@vitest/coverage-v8 declares a peer on the exact vitest version it ships",
+        "alongside, so ungrouped the two arrive as separate pull requests and each",
+        "one leaves the peer range unsatisfied. Neither can go green alone.",
+      ],
+      matchPackageNames: ["vitest", "@vitest/coverage-v8"],
+      groupName: "vitest",
+    },
+    {
+      description: [
+        "react and react-dom are released as a pair, and react-dom's peer range on",
+        "react is floored at its own version: react-dom 19.3.1 wants react ^19.3.1,",
+        "so arriving alone it is unsatisfiable against react 19.3.0. The two @types",
+        "packages track the same major.",
+      ],
+      matchPackageNames: [
+        "react",
+        "react-dom",
+        "@types/react",
+        "@types/react-dom",
+      ],
+      groupName: "react",
+    },
+    {
+      description: [
+        "next and eslint-config-next are published from one repository at one",
+        "version. next is a devDependency here only so eslint-config-next resolves,",
+        "so the two are meaningless apart.",
+      ],
+      matchPackageNames: ["next", "eslint-config-next"],
+      groupName: "next",
     },
     {
       description: [
