@@ -1,5 +1,14 @@
 # Changelog
 
+## [0.3.2](https://github.com/openbunny/react/compare/v0.3.1...v0.3.2) (2026-11-12)
+
+
+### Bug Fixes
+
+* **deps:** Resolve the next RCE advisories ([b958ffc](https://github.com/openbunny/react/commit/b958ffc9a3de42075a7535931eeba185cd75bee8))
+* **release:** Stop every release pull request failing format:check ([#12](https://github.com/openbunny/react/issues/12)) ([29064a7](https://github.com/openbunny/react/commit/29064a71f16f8cb81642026152a2ad53b52cc849))
+* **renovate:** Add the holdbacks this repository needs ([503af0e](https://github.com/openbunny/react/commit/503af0e7f590e0b9b7fb90398bc3ea29dc47fabd))
+
 ## [0.3.1](https://github.com/openbunny/react/compare/v0.3.0...v0.3.1) (2026-10-07)
 
 ### Bug Fixes
