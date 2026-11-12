@@ -2,52 +2,62 @@
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>openbunny/.github"],
   packageRules: [
-    // One bun version is written in three places: packageManager and engines.bun
-    // in package.json, and bun in mise.toml. The npm and mise managers reach them
-    // separately, so without a group each opens its own pull request against the
-    // same upgrade. openbunny/fiona.sm had exactly that split before it was
-    // grouped there.
     {
+      description: [
+        "One bun version is written in three places: packageManager and engines.bun",
+        "in package.json, and bun in mise.toml. The npm and mise managers reach them",
+        "separately, so ungrouped each opens its own pull request for one upgrade.",
+        "openbunny/fiona.sm had exactly that split before it was grouped there.",
+      ],
       matchPackageNames: ["bun"],
       groupName: "bun",
     },
-    // HOLDBACK: the ubuntu runner label stays on 24.04.
-    // ubuntu-26.04 is generally available, but actionlint recognises it in no
-    // release, so openbunny/theme holds it back to keep `just actions-lint`
-    // green. This repository has no actionlint gate of its own, and is held with
-    // it so the org's repositories keep building on one runner image.
-    // Closes when: actionlint ships a release that recognises ubuntu-26.04.
     {
+      description: [
+        "HOLDBACK: the ubuntu runner label stays on 24.04.",
+        "ubuntu-26.04 is generally available, but actionlint recognises it in no",
+        "release, so openbunny/theme holds it back to keep `just actions-lint` green.",
+        "This repository has no actionlint gate of its own and is held with it so the",
+        "org's repositories keep building on one runner image.",
+        "Closes when: actionlint ships a release that recognises ubuntu-26.04.",
+      ],
       matchDatasources: ["github-runners"],
       matchPackageNames: ["ubuntu"],
       allowedVersions: "<26",
     },
-    // HOLDBACK HB-2026-003: TypeScript is held at 6.0.3.
-    // typescript-eslint declares `typescript: ">=4.8.4 <6.1.0"` and refuses to
-    // load on TypeScript 7. Same hold as openbunny/fiona.sm.
-    // Closes when: typescript-eslint releases with TypeScript 7 support.
     {
+      description: [
+        "HOLDBACK HB-2026-003: TypeScript is held at 6.0.3.",
+        '@typescript-eslint/eslint-plugin 8.70.1 declares `typescript: ">=4.8.4 <6.1.0"`',
+        "and refuses to load on TypeScript 7. Same hold as openbunny/fiona.sm.",
+        "Closes when: typescript-eslint releases with TypeScript 7 support.",
+      ],
       matchPackageNames: ["typescript"],
       allowedVersions: "<6.1.0",
       groupName: "typescript holdback",
       automerge: false,
     },
-    // HOLDBACK HB-2026-004: ESLint is held at 9.39.5.
-    // eslint-plugin-react, which arrives through eslint-config-next, calls a
-    // rule-context API that ESLint 10 removed. Same hold as openbunny/fiona.sm.
-    // Closes when: eslint-plugin-react releases compatible with ESLint 10.
     {
+      description: [
+        "HOLDBACK HB-2026-004: ESLint is held at 9.39.5.",
+        "eslint-plugin-react 7.37.5, which arrives through eslint-config-next, declares",
+        '`eslint: "^9.7"` and calls a rule-context API that ESLint 10 removed.',
+        "Same hold as openbunny/fiona.sm.",
+        "Closes when: eslint-plugin-react releases compatible with ESLint 10.",
+      ],
       matchPackageNames: ["eslint"],
       allowedVersions: "<10.0.0",
       groupName: "eslint holdback",
       automerge: false,
     },
-    // HOLDBACK HB-2026-005: eslint-plugin-unicorn is held at 65.x.
-    // 66.0.0 and later declare `eslint: ">=10.4"`, which HB-2026-004 forbids, so
-    // taking unicorn alone would leave an unsatisfied peer range rather than an
-    // upgrade. Same hold as openbunny/fiona.sm.
-    // Closes when: HB-2026-004 closes.
     {
+      description: [
+        "HOLDBACK HB-2026-005: eslint-plugin-unicorn is held at 65.x.",
+        '66.0.0 and later declare `eslint: ">=10.4"`, which HB-2026-004 forbids, so',
+        "taking unicorn alone would leave an unsatisfied peer range, not an upgrade.",
+        "Same hold as openbunny/fiona.sm.",
+        "Closes when: HB-2026-004 closes.",
+      ],
       matchPackageNames: ["eslint-plugin-unicorn"],
       allowedVersions: "<66.0.0",
       groupName: "eslint-plugin-unicorn holdback",
