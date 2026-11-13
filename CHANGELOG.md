@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.3.3](https://github.com/openbunny/react/compare/v0.3.2...v0.3.3) (2026-11-13)
+
+
+### Bug Fixes
+
+* **release:** Allow the publish workflow to be run manually ([#13](https://github.com/openbunny/react/issues/13)) ([097612a](https://github.com/openbunny/react/commit/097612a2bde42415829725ea883b227d050c3d9f))
+
 ## [0.3.2](https://github.com/openbunny/react/compare/v0.3.1...v0.3.2) (2026-11-12)
 
 
