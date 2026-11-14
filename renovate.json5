@@ -1,6 +1,11 @@
 {
   $schema: "https://docs.renovatebot.com/renovate-schema.json",
   extends: ["github>openbunny/.github"],
+
+  // The DCO check gates every pull request on a sign-off trailer that matches the
+  // commit author, and Renovate authors its own commits. Without this its branches
+  // can never go green, which is what stalled the whole queue.
+  commitBody: "Signed-off-by: renovate[bot] <29139614+renovate[bot]@users.noreply.github.com>",
   description: [
     "Four holdbacks live below. allowedVersions drops a blocked update silently, so",
     "the dashboard is turned back on here, against the org preset, to give every",
