@@ -58,7 +58,7 @@
     "typescript": "6.0.3"
   },
   "devDependencies": {
-    "@base-ui/react": "1.7.0",
+    "@base-ui/react": "1.9.0",
     "@testing-library/jest-dom": "7.0.1",
     "@testing-library/react": "16.3.3",
     "@types/node": "26.4.0",
