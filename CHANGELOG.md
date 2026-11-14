@@ -1,5 +1,13 @@
 # Changelog
 
+## [0.3.4](https://github.com/openbunny/react/compare/v0.3.3...v0.3.4) (2026-11-14)
+
+
+### Bug Fixes
+
+* **renovate:** Hold Node on the 24 LTS line ([#40](https://github.com/openbunny/react/issues/40)) ([328dbdf](https://github.com/openbunny/react/commit/328dbdf4134916084b15e69eff9908b0e67fd5f5))
+* **renovate:** Sign off Renovate's commits so its branches can pass DCO ([#35](https://github.com/openbunny/react/issues/35)) ([f868337](https://github.com/openbunny/react/commit/f868337c708ac95b5317c8d8a0f102920c35a73e))
+
 ## [0.3.3](https://github.com/openbunny/react/compare/v0.3.2...v0.3.3) (2026-11-13)
 
 
