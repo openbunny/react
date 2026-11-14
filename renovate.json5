@@ -15,6 +15,23 @@
   packageRules: [
     {
       description: [
+        "HOLDBACK: Node stays on the 24 LTS line.",
+        "openbunny/theme cannot follow to 26. The @types/node that ships with 26 no",
+        "longer accepts string | undefined for assert.ok's message argument, and two",
+        "call sites in its tests/tokens.test.ts pass exactly that, so its typecheck",
+        "fails. theme, react and fiona.sm build on each other and should sit on one",
+        "Node line; a major runtime bump also changes the npm version and the",
+        "provenance environment that publish runs in. Nothing here is known to break",
+        "on 26 -- the hold is about moving the three repositories together.",
+        "Node 24 is LTS and fully supported, so waiting costs nothing.",
+        "Closes when: theme coerces those two assert.ok messages and goes green on 26.",
+      ],
+      matchDatasources: ["node-version", "docker"],
+      matchPackageNames: ["node"],
+      allowedVersions: "<26",
+    },
+    {
+      description: [
         "This package is published, so its peer ranges are a contract with consumers.",
         "The org preset sets rangeStrategy: pin globally, and pin reaches",
         "peerDependencies too: it would rewrite `react: ^19.3.0` to one exact version",
